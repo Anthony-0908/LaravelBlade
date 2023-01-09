@@ -1,0 +1,48 @@
+//12/8/22
+
+para di na mahanap ang directory type nalang ang {{ asset('folderName/filename') }}
+same with styles images, javascript files
+
+ <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+
+-- href={{ route('home') }}
+ang app.blade.php naka connect sa Route::view('/', 'index')->name('home')
+
+
+web.php
+//Sa navbar routing 
+Routes view ito ay para sa navbar layout ng app.blade.php 
+Route::view('/', 'index')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
+
+
+folder migration
+
+php artisan migrate to send the tables made from the migrations folder
+
+creating table_name creating a new table for the model 
+php artisan make:migration create_categories_table
+
+
+
+getting data from the HomeController's array categories
+palitan lang ng get at ang fulll directory ni homeController
+
+[file directory of the HomeController::class , method name ]
+Route::get('/', [\App\Http\Controllers\HomeController::class , 'index'])->name('home');
+ Route::view('/', 'index')->name('home');
+
+ php artinsa make:model model_name -m
+
+ database schema and model for the post 
+
+
+
+Old way of getting data if compiled in an arrary 
+ // return view('index', [
+        //     'post' => $posts,
+        //     'categories' => $allCategories
+        // ]);
+
+        
