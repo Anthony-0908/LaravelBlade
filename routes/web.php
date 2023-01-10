@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//Sa navbar naka connnect 
+//Sa navbar naka connnect
 Route::get('/', [\App\Http\Controllers\HomeController::class , 'index'])->name('home');
+Route::get('posts/{post}',[\App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 
 
-// Route::get('/About',function() { 
+// Route::get('/About',function() {
 //     return view('about');
 // });
 
-// Route::get('/contact', function() { 
+// Route::get('/contact', function() {
 //     return view('contact');
 // });
